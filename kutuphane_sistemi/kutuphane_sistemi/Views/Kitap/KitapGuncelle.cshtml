@@ -1,0 +1,55 @@
+﻿@model kutuphane_sistemi.Models.Kitap
+
+@{
+    ViewData["Title"] = "KitapGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kitap Güncelle</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="KitapGuncelle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kitap_adi" class="control-label"></label>
+                <input asp-for="Kitap_adi" class="form-control" />
+                <span asp-validation-for="Kitap_adi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kitap_tur" class="control-label"></label>
+                <input asp-for="Kitap_tur" class="form-control" />
+                <span asp-validation-for="Kitap_tur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kitap_yazar" class="control-label"></label>
+                <input asp-for="Kitap_yazar" class="form-control" />
+                <span asp-validation-for="Kitap_yazar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uye_adi" class="control-label"></label>
+                <input asp-for="Uye_adi" class="form-control" />
+                <span asp-validation-for="Uye_adi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Uye_soyad" class="control-label"></label>
+                <input asp-for="Uye_soyad" class="form-control" />
+                <span asp-validation-for="Uye_soyad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="KitapListele">Listeye dön</a>
+</div>
+

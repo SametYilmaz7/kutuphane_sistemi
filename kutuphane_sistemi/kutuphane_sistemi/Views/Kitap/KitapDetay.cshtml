@@ -1,0 +1,54 @@
+﻿@model kutuphane_sistemi.Models.Kitap
+
+@{
+    ViewData["Title"] = "KitapDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kitapın detayı</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kitap_adi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kitap_adi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kitap_tur)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kitap_tur)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Kitap_yazar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Kitap_yazar)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uye_adi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uye_adi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Uye_soyad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Uye_soyad)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Güncelle", "KitapGuncelle", new { id = Model.Id }) |
+    <a asp-action="KitapListele">Listeye Dön</a>
+</div>

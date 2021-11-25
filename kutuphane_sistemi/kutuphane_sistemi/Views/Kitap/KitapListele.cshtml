@@ -1,0 +1,66 @@
+﻿@model IEnumerable<kutuphane_sistemi.Models.Kitap>
+
+@{
+    ViewData["Title"] = "KitapListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Kitap Listele</h1>
+
+<p>
+    <a asp-action="KitapOlustur">Yeni Oluştur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kitap_adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kitap_tur)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kitap_yazar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uye_adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Uye_soyad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kitap_adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kitap_tur)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kitap_yazar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uye_adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Uye_soyad)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "KitapGuncelle", new { id=item.Id }) |
+                @Html.ActionLink("Detay", "KitapDetay", new { id=item.Id }) |
+                @Html.ActionLink("Sil", "KitapSil", new { id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
